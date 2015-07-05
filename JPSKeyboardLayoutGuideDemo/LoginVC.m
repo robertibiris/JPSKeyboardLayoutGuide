@@ -44,7 +44,7 @@
     [self.view addSubview:self.loginField];
     self.loginField.placeholder = @"username";
     
-    // Constraints
+    // Adding Constraints manually
     NSLayoutConstraint *centerX = [NSLayoutConstraint constraintWithItem:self.loginField
                                                                attribute:NSLayoutAttributeCenterX
                                                                relatedBy:NSLayoutRelationEqual
@@ -52,14 +52,11 @@
                                                                attribute:NSLayoutAttributeCenterX
                                                               multiplier:1.0f
                                                                 constant:0.0f];
-    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.loginField
-                                                              attribute:NSLayoutAttributeBottom
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:self.keyboardLayoutGuide
-                                                              attribute:NSLayoutAttributeTop
-                                                             multiplier:1.0f
-                                                               constant:-10.0f];
-    [self.view addConstraints:@[centerX, bottom]];
+    [self.view addConstraints:@[centerX]];
+
+    //Example using the default utility method to anchor views's bottoms to the top of the keyboardGuide
+    [self jps_anchorViewBottomToKeyboardLayoutGuide:self.loginField scale:1.0 offset:10];
+    
 }
 
 - (void)dismissKeyboard {

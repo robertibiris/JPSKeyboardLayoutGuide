@@ -14,6 +14,11 @@
 - (void)jps_viewWillAppear:(BOOL)animated;
 - (void)jps_viewDidDisappear:(BOOL)animated;
 
+#pragma mark - Utilities
+
+//generic method to anchor (by using a constraint) the bottom of the provided UIView instance to the keyboardLayoutGuide (automatically creates and adds the constraint into the UIVIewController's 'view' property)
+- (void)jps_anchorViewBottomToKeyboardLayoutGuide:(UIView *)view scale:(CGFloat)scale offset:(CGFloat)offset;
+
 @property (nonatomic, strong) id<UILayoutSupport> keyboardLayoutGuide;
 
 @end
