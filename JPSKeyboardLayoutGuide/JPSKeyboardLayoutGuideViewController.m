@@ -127,7 +127,7 @@
                                                                  toItem:self.keyboardLayoutGuide
                                                               attribute:NSLayoutAttributeTop
                                                              multiplier:scale
-                                                               constant:offset];
+                                                               constant:-offset];
     [self.view addConstraints:@[bottom]];
 }
 
